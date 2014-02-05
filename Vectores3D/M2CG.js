@@ -1,0 +1,5 @@
+function M2CG(){
+	
+};
+
+
