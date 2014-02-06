@@ -1,5 +1,0 @@
-function M2CG(){
-	
-};
-
-
