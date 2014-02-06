@@ -5,7 +5,19 @@
 	<meta charset="UTF-8">
 </head>
 <body>
-<script src="M2CG.js"></script>
+<script src="VectorMath.js"></script>
 <script src="vector.js"></script>
+<script>
+	var v = new Vec3(4,5,3);
+	var u = new Vec3(5);
+	var unitario;
+	document.write("Modulo de v: "+v.module()+" modulo de u :"+u.module());
+	document.write('</br>');
+	document.write("Dirección de v: "+v.direction()+" Dirección de u : "+u.direction());
+	document.write("Unitario de v: "+JSON.stringify(unitario = v.unitario())+ " norm : "+(Math.pow(unitario.x,2)+Math.pow(unitario.y,2)+Math.pow(unitario.z,2)));
+
+	var vADDu = VectorMath.add(v,u);
+	console.log(vADDu);
+</script>
 </body>
 </html>

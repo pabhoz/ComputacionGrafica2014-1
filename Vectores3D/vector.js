@@ -1,6 +1,5 @@
 var Vec3 = function( x, y, z ) {
         this.set( x, y||x, z||x );
-        this.dCos = new Array();
     };
 
  Vec3.prototype = {
@@ -23,17 +22,8 @@ var Vec3 = function( x, y, z ) {
         },
         unitario: function(){
             var modulo = this.module();
-            var unitario = new Array();
-            unitario[0] = this.x/modulo;
-            unitario[1] = this.y/modulo;
-            unitario[2] = this.z/modulo;
-            return unitario;
+            return new Vec3(this.x/modulo,
+                            this.y/modulo,
+                            this.z/modulo);
         }
 };
-
-var v = new Vec3(4,5,3);
-var u = new Vec3(5);
-document.write("Modulo de v: "+v.module()+" modulo de u :"+u.module());
-document.write('</br>');
-document.write("Dirección de v: "+v.direction()+" Dirección de u : "+u.direction());
-document.write("Unitario de v: "+v.unitario()+ " norm : "+(Math.pow(v.unitario()[0],2)+Math.pow(v.unitario()[1],2)+Math.pow(v.unitario()[2],2)));
