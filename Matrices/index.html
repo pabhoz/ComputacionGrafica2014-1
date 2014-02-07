@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Matrices - Computación Gráfica</title>
+</head>
+<body>
+	<script src="Matriz.js"></script>
+	<script>
+	var n = mat3.create();
+
+	var iData = new Array(
+			1,0,0,
+			0,1,0,
+			0,0,1
+		);
+	var mIdentidad = mat3.create(iData);
+	
+	document.write("Matriz n : "+stringifyMatrix(n,3));
+	document.write("Matriz Identidad : "+stringifyMatrix(mIdentidad,3));
+
+	mat3.set(mIdentidad,n); document.write("Set n like i </br>");
+	document.write("Matriz n : "+stringifyMatrix(n,3));
+
+		function stringifyMatrix (matrix,dim) {
+
+		var sMatrix = "<div>";
+		var dim = matrix.length - dim;
+		for (var i = matrix.length - 1; i >= 0; i--) {
+			sMatrix+= matrix[i];
+			if(dim == i){
+				sMatrix+="</br>";
+				dim = dim/2;
+			}else{
+				if(i != 0){sMatrix+=",";}
+			}
+		};
+		sMatrix+="</div>";
+		return sMatrix;
+	}
+	</script>
+</body>
+</html>
